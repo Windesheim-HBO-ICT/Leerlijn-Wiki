@@ -1,10 +1,10 @@
-naam: Bug Rapport
-omschrijving: Meld een bug
-titel: "[Bug]: "
+name: Bug Rapport
+description: Meld een bug
+title: "[Bug]: "
 labels: ["bug"]
 body:
   - type: textarea
-    id: wat-gebeurde-er
+    id: what-happened
     attributes:
       label: Wat gebeurde er?
       description: Vertel ons ook, wat had je verwacht dat er zou gebeuren?
@@ -13,7 +13,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: stappen-om-te-reproduceren
+    id: steps-to-reproduce
     attributes:
       label: Stappen om de bug te reproduceren
       description: Geef gedetailleerde stappen om het probleem te reproduceren.
