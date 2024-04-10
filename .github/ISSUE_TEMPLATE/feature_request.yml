@@ -6,7 +6,7 @@ body:
 - type: markdown
   attributes:
     value: >
-      #### Bedankt voor het bijdragen! Voordat je een feature request maakt, zorg ervoor dat deze niet al bestaat [Huidige en vorige issues](https://github.com/Windesheim-HBO-ICT/Curriculum/issues?page=1&q=is%3Aissue+sort%3Acreated-desc)
+      #### Bedankt voor het bijdragen! Voordat je een feature request maakt, zorg ervoor dat deze niet al bestaat [Huidige en vorige issues](https://github.com/Windesheim-HBO-ICT/Leertaken/issues?page=1&q=is%3Aissue+sort%3Acreated-desc)
 - type: textarea
   attributes:
     label: Beschrijving
