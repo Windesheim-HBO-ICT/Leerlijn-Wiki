@@ -2,7 +2,7 @@ import os
 import shutil
 from git import Repo
 
-DEFAULT_DOCS_FILES = ['index.md', 'tags.md']
+DEFAULT_DOCS_FILES = ['index2.md', 'index.md', 'tags.md']
 EXCLUDE_DIRS = ['assets', 'stylesheets']
 
 

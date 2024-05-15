@@ -1,11 +1,11 @@
-import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../types"
-import style from "../styles/listPage.scss"
-import { PageList } from "../PageList"
-import { FullSlug, getAllSegmentPrefixes, simplifySlug } from "../../util/path"
-import { QuartzPluginData } from "../../plugins/vfile"
 import { Root } from "hast"
-import { htmlToJsx } from "../../util/jsx"
 import { i18n } from "../../i18n"
+import { QuartzPluginData } from "../../plugins/vfile"
+import { htmlToJsx } from "../../util/jsx"
+import { FullSlug, getAllSegmentPrefixes, simplifySlug } from "../../util/path"
+import { PageList } from "../PageList"
+import style from "../styles/listPage.scss"
+import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../types"
 
 const numPages = 10
 const TagContent: QuartzComponent = (props: QuartzComponentProps) => {

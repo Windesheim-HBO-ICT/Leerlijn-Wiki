@@ -1,8 +1,8 @@
-import { FullSlug, resolveRelative } from "../util/path"
+import { GlobalConfiguration } from "../cfg"
 import { QuartzPluginData } from "../plugins/vfile"
+import { FullSlug, resolveRelative } from "../util/path"
 import { Date, getDate } from "./Date"
 import { QuartzComponent, QuartzComponentProps } from "./types"
-import { GlobalConfiguration } from "../cfg"
 
 export function byDateAndAlphabetical(
   cfg: GlobalConfiguration,
@@ -25,12 +25,28 @@ export function byDateAndAlphabetical(
   }
 }
 
+export function byDifficulty(
+  _: GlobalConfiguration,
+): (f1: QuartzPluginData, f2: QuartzPluginData) => number {
+  return (f1, f2) => {
+    const difficulty1 = f1.frontmatter?.difficulty ?? 0
+    const difficulty2 = f2.frontmatter?.difficulty ?? 0
+    if (difficulty1 < difficulty2) {
+      return -1 // f1 should come before f2
+    } else if (difficulty1 > difficulty2) {
+      return 1 // f1 should come after f2
+    } else {
+      return 0 // difficulty1 equals difficulty2, order doesn't matter
+    }
+  }
+}
+
 type Props = {
   limit?: number
 } & QuartzComponentProps
 
 export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit }: Props) => {
-  let list = allFiles.sort(byDateAndAlphabetical(cfg))
+  let list = allFiles.sort(byDifficulty(cfg))
   if (limit) {
     list = list.slice(0, limit)
   }

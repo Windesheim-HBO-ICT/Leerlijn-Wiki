@@ -1,7 +1,9 @@
 ---
-title: Welcome to Windesheim leertaken 
+title: Welcome to Windesheim leertaken
 tags:
-- Welcome page
+  - Welcome/test
+  - page
+difficulty: 2
 ---
 
 Welkom!
