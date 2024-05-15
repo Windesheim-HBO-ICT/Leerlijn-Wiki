@@ -7,4 +7,12 @@ difficulty: 3
 
 Welkom! difficulty 2
 
-<Code-Block language="js" initial='alert(\"hoi");'> </Code-block>
+<code-block language="javascript" initialCode='console.log("Hello, world!");'></code-block>
+
+Test123
+
+```json
+{
+  "a":"b"
+}
+```

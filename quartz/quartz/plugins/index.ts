@@ -1,6 +1,6 @@
-import { StaticResources } from "../util/resources"
-import { FilePath, FullSlug } from "../util/path"
 import { BuildCtx } from "../util/ctx"
+import { FilePath, FullSlug } from "../util/path"
+import { StaticResources } from "../util/resources"
 
 export function getStaticResourcesFromPlugins(ctx: BuildCtx) {
   const staticResources: StaticResources = {
@@ -33,14 +33,21 @@ export function getStaticResourcesFromPlugins(ctx: BuildCtx) {
             socket.addEventListener('message', () => document.location.reload(true))
           `,
     })
+
+    staticResources.js.push({
+      loadTime: "afterDOMReady",
+      contentType: "external",
+      src: "/codeBlock.js",
+      moduleType: "module",
+    })
   }
 
   return staticResources
 }
 
-export * from "./transformers"
-export * from "./filters"
 export * from "./emitters"
+export * from "./filters"
+export * from "./transformers"
 
 declare module "vfile" {
   // inserted in processors.ts

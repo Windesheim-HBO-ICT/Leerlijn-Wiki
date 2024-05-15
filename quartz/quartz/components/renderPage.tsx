@@ -1,13 +1,13 @@
+import { Element, ElementContent, Root } from "hast"
 import { render } from "preact-render-to-string"
-import { QuartzComponent, QuartzComponentProps } from "./types"
-import HeaderConstructor from "./Header"
-import BodyConstructor from "./Body"
-import { JSResourceToScriptElement, StaticResources } from "../util/resources"
-import { clone, FullSlug, RelativeURL, joinSegments, normalizeHastElement } from "../util/path"
 import { visit } from "unist-util-visit"
-import { Root, Element, ElementContent } from "hast"
 import { GlobalConfiguration } from "../cfg"
 import { i18n } from "../i18n"
+import { FullSlug, RelativeURL, clone, joinSegments, normalizeHastElement } from "../util/path"
+import { JSResourceToScriptElement, StaticResources } from "../util/resources"
+import BodyConstructor from "./Body"
+import HeaderConstructor from "./Header"
+import { QuartzComponent, QuartzComponentProps } from "./types"
 
 interface RenderComponents {
   head: QuartzComponent
@@ -48,6 +48,12 @@ export function pageResources(
         moduleType: "module",
         contentType: "external",
       },
+      // {
+      //   src: joinSegments(baseDir, "codeBlock.js"),
+      //   loadTime: "afterDOMReady",
+      //   moduleType: "module",
+      //   contentType: "external",
+      // },
     ],
   }
 }

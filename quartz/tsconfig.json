@@ -15,6 +15,6 @@
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
   },
-  "include": ["**/*.ts", "**/*.tsx", "./package.json"],
+  "include": ["**/*.ts", "**/*.tsx", "./package.json", "public/codeBlock.js"],
   "exclude": ["build/**/*.d.ts"],
 }
