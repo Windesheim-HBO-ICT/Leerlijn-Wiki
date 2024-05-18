@@ -7,8 +7,7 @@ export const CodeRunner: QuartzTransformerPlugin = () => {
     markdownPlugins() {
       return [() => {
         return (tree) => {
-          visit(tree, 'code', (node: any) => {
-            console.log(node.lang && node.meta === 'runner');
+          visit(tree, 'code', (node: any) => {            
             if (node.lang && node.meta === 'runner') {
               const language = node.lang
               const code = node.value
