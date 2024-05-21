@@ -12,7 +12,7 @@ export const CodeRunner: QuartzTransformerPlugin = () => {
               const language = node.lang
               const code = node.value
               node.type = 'html'
-              node.value = `<script src="./static/codeBlock.js" type="module"></script><code-block language="${language}" initialCode="${code.replace(/"/g, '&quot;')}"></code-block>`
+              node.value = `<code-block language="${language}" initialCode="${code.replace(/"/g, '&quot;')}"></code-block>`
             }
           })
         }
