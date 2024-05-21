@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Windesheim leertaken</title>
+      <link>https://localhost</link>
+      <description>Last 10 notes on Windesheim leertaken</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Welcome to Windesheim leertaken</title>
+    <link>https://localhost/</link>
+    <guid>https://localhost/</guid>
+    <description>Welkom!.</description>
+    <pubDate>Wed, 15 May 2024 16:06:50 GMT</pubDate>
+  </item><item>
+    <title>Index2</title>
+    <link>https://localhost/index2</link>
+    <guid>https://localhost/index2</guid>
+    <description>Welkom! difficulty 2 Test123 { &quot;a&quot;:&quot;b&quot; }.</description>
+    <pubDate>Wed, 15 May 2024 16:06:50 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
