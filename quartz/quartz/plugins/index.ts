@@ -34,12 +34,6 @@ export function getStaticResourcesFromPlugins(ctx: BuildCtx) {
           `,
     })
 
-    // staticResources.js.push({
-    //   loadTime: "afterDOMReady",
-    //   contentType: "external",
-    //   src: "/static/codeBlock.js",
-    //   moduleType: "module",
-    // })
     staticResources.js.push({
       loadTime: "afterDOMReady",
       contentType: "external",

@@ -54,4 +54,4 @@ def clone_repo(repo_url, branch_name, source_folder, destination_folder):
         print(f"Error: {e}")
 
 
-clone_repo('https://github.com/martijnschuman/Leertaken-wiki.git', 'Code', '/docs/', '/usr/src/app/content/')
+clone_repo('https://github.com/Windesheim-HBO-ICT/Leerlijn-SE', 'main', '/docs/', '/usr/src/app/content/')
