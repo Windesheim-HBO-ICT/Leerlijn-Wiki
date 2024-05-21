@@ -34,10 +34,16 @@ export function getStaticResourcesFromPlugins(ctx: BuildCtx) {
           `,
     })
 
+    // staticResources.js.push({
+    //   loadTime: "afterDOMReady",
+    //   contentType: "external",
+    //   src: "/static/codeBlock.js",
+    //   moduleType: "module",
+    // })
     staticResources.js.push({
       loadTime: "afterDOMReady",
       contentType: "external",
-      src: "/static/codeBlock.js",
+      src: "https://cdn.jsdelivr.net/gh/windesheim-hbo-ict/deeltaken@v0.0.1/CodeBlock/codeBlock.min.js",
       moduleType: "module",
     })
   }
