@@ -9,7 +9,7 @@ cd .\quartz\
 En start met:
 
 ```SH
-docker run --rm -itp 8080:8080 $(docker build -q .)
+docker run --rm -itp 80:80 $(docker build -q .)
 ```
 
 Of met:
