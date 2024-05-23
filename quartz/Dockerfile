@@ -9,9 +9,6 @@ WORKDIR /usr/src/app
 COPY --from=builder /usr/src/app/ /usr/src/app/
 COPY . .
 RUN apt-get update && apt-get install -y \
-    git \
-    python3.4 \
-    python3-pip \
-    python3-git
-RUN python3 clone_repo.py
-CMD ["npx", "quartz", "build", "--serve"]
+    git
+RUN chmod +x /usr/src/app/start.sh
+CMD ["bash", "/usr/src/app/start.sh"]
