@@ -1,5 +1,5 @@
 #!/bin/sh
-# Some setup or initial commands if needed
+
 echo "Started cloning the repository.."
 
 # Call the child script
