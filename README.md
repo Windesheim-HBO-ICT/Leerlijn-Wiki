@@ -19,7 +19,15 @@ docker build -t windesheim-leertaken-quartz .
 docker run -dp 80:80 windesheim-leertaken-quartz
 ```
 
-The website is accesible on <http://localhost/>
+Of met:
+
+```sh
+npm i
+npx quartz build --serve
+```
+<sub><sub>Niet aan te raden, alleen handig voor development. Vergeet niet om handmatig de `content` map te vullen met .md bestanden</sub></sub>
+
+De website start dan op <http://localhost/>
 
 ## Coderunner
 
