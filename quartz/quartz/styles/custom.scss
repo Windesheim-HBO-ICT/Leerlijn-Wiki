@@ -1,3 +1,83 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
 
-// put your custom CSS here!
+
+.sidebar{
+    gap: 0.75rem !important;
+}
+
+#site-logo {
+    width: 200px;
+}
+
+.page-title{
+    display: flex; 
+    justify-content: center;
+}
+
+// if the theme is dark, use the dark logo
+html[saved-theme="dark"] {
+    #site-logo {
+        content: url("/static/Windesheim_logo_dark.png");
+    }
+}
+
+// if the theme is light, use the light logo
+html[saved-theme="light"] {
+    #site-logo {
+        content: url("/static/Windesheim_logo_light.png");
+    }
+}
+
+img {
+    margin: 0;
+}
+
+// move the darkmode toggle to the top left
+.darkmode {
+    margin-top: 0.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+// make the search bar wider
+.search {
+    max-width: 20rem;
+}
+
+// navigation bar
+.explorer{
+    margin-top: 0.5rem;
+}
+.article-title{
+    color: var(--quaternary);
+}
+#custom-navigation > a{
+    display: block !important;
+    padding-bottom: 0.5rem !important;
+}
+#explorer-content{
+    margin-top: -5px;
+}
+@media screen and (min-width: $fullPageWidth) {
+    #explorer-toggle{
+        display: none
+    }
+}
+
+// content
+@media screen and (min-width: $fullPageWidth) {
+    .center{
+        min-height: 90vh;
+    }
+}
+
+// footer
+footer{
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+}
+footer ul{
+    justify-content: center !important;
+}
