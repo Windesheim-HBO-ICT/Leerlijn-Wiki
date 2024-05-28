@@ -111,12 +111,6 @@ a {
 }
 
 .page {
-  @media all and (max-width: $fullPageWidth) {
-    margin: 0 auto;
-    padding: 0 1rem;
-    max-width: $pageWidth;
-  }
-
   & article {
     & > h1 {
       font-size: 2rem;
@@ -146,53 +140,9 @@ a {
   & > #quartz-body {
     width: 100%;
     display: flex;
-    @media all and (max-width: $fullPageWidth) {
-      flex-direction: column;
-    }
-
-    & .sidebar {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      top: 0;
-      width: $sidePanelWidth;
-      margin-top: $topSpacing;
-      box-sizing: border-box;
-      padding: 0 2rem;
-      position: fixed;
-      @media all and (max-width: $fullPageWidth) {
-        position: initial;
-        flex-direction: row;
-        padding: 0;
-        width: initial;
-        margin-top: 2rem;
-      }
-    }
-
-    & .sidebar.left {
-      left: calc(calc(100vw - $pageWidth) / 2 - $sidePanelWidth);
-      @media all and (max-width: $fullPageWidth) {
-        gap: 0;
-        align-items: center;
-      }
-    }
-
-    & .sidebar.right {
-      right: calc(calc(100vw - $pageWidth) / 2 - $sidePanelWidth);
-      flex-wrap: wrap;
-      & > * {
-        @media all and (max-width: $fullPageWidth) {
-          flex: 1;
-          min-width: 140px;
-        }
-      }
-    }
   }
 
   & .page-header {
-    width: $pageWidth;
-    margin: $topSpacing auto 0 auto;
     @media all and (max-width: $fullPageWidth) {
       width: initial;
       margin-top: 2rem;
@@ -201,9 +151,6 @@ a {
 
   & .center,
   & footer {
-    margin-left: auto;
-    margin-right: auto;
-    width: $pageWidth;
     @media all and (max-width: $fullPageWidth) {
       width: initial;
       margin-left: 0;
