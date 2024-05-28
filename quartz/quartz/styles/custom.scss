@@ -62,6 +62,12 @@ html[saved-theme="light"] {
 #explorer-content{
     margin-top: -5px;
 }
+#explorer-content > .overflow{
+    background: 0 0 !important;
+}
+ul.overflow{
+    max-height: 70vh;
+}
 @media screen and (min-width: $fullPageWidth) {
     #explorer-toggle{
         display: none
@@ -174,4 +180,7 @@ footer{
 }
 footer ul{
     justify-content: center !important;
+}
+footer>hr{
+    margin-top: 1rem;
 }
