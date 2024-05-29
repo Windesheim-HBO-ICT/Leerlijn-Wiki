@@ -1,3 +1,186 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
 
-// put your custom CSS here!
+// On 1.25 pixel ratio devices, use a thin scrollbar
+@media (-webkit-min-device-pixel-ratio: 1.25) { 
+    html{
+        scrollbar-width: thin;
+    }
+ }
+
+#site-logo {
+    width: 200px;
+}
+
+.page-title{
+    display: flex; 
+    justify-content: center;
+}
+
+// if the theme is dark, use the dark logo
+html[saved-theme="dark"] {
+    #site-logo {
+        content: url("/static/Windesheim_logo_dark.png");
+    }
+}
+
+// if the theme is light, use the light logo
+html[saved-theme="light"] {
+    #site-logo {
+        content: url("/static/Windesheim_logo_light.png");
+    }
+}
+
+// move the darkmode toggle to the top left
+.darkmode {
+    margin-top: 0.25rem;
+    position: absolute;
+    top: 0.2em;
+    left: 0;
+}
+
+.sidebar{
+    padding: 1em;
+}
+
+// make the search bar wider
+.search {
+    max-width: 100%;
+}
+
+// navigation bar
+.explorer{
+    margin-top: 0.5rem;
+}
+.article-title{
+    color: var(--quaternary);
+}
+#custom-navigation > a{
+    display: block !important;
+    padding-bottom: 0.5rem !important;
+}
+#explorer-content{
+    margin-top: -5px;
+}
+#explorer-content > .overflow{
+    background: 0 0 !important;
+}
+ul.overflow{
+    max-height: 70vh;
+}
+@media screen and (min-width: $fullPageWidth) {
+    #explorer-toggle{
+        display: none
+    }
+}
+
+// content
+@media screen and (min-width: $fullPageWidth) {
+    .center{
+        min-height: 90vh;
+    }
+}
+
+.breadcrumb-container{
+    margin: 0;
+}
+
+// custom grid
+.page > #quartz-body {
+    display: grid;
+}
+
+.page > #quartz-body > .center{
+    padding: 1em 0.5em 0.5em 0;
+}
+
+@media (min-width: 1280px) {
+    .page > #quartz-body{
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+    }
+
+    .page > #quartz-body > .left.sidebar {
+        grid-column: span 2 / span 10;
+    }
+
+    .page > #quartz-body > .center {
+        grid-column: span 6 / span 10;
+    }
+
+    .page > #quartz-body > .right.sidebar {
+        grid-column: span 2 / span 10;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .page > #quartz-body{
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+    }
+
+    .page > #quartz-body > .left.sidebar {
+        grid-column: span 2 / span 10;
+    }
+
+    .page > #quartz-body > .center {
+        grid-column: span 6 / span 10;
+    }
+
+    .page > #quartz-body > .right.sidebar {
+        grid-column: span 2 / span 10;
+    }
+
+    .sidebar{
+        padding: 0.5em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .page > #quartz-body{
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+    }
+
+    .page > #quartz-body > .left.sidebar {
+        grid-column: span 2 / span 10;
+    }
+
+    .page > #quartz-body > .center {
+        grid-column: span 8 / span 10;
+    }
+
+    .sidebar{
+        padding: 0.5em;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+    .page > #quartz-body{
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+    }
+
+    .page > #quartz-body > .left.sidebar {
+        grid-column: span 3 / span 10;
+    }
+
+    .page > #quartz-body > .center {
+        grid-column: span 7 / span 10;
+    }
+
+    .page > #quartz-body > .right.sidebar {
+        grid-column: span 10 / span 10;
+    }
+
+    .sidebar{
+        padding: 0.5em;
+    }
+}
+
+// footer
+footer{
+    margin-bottom: 1rem !important;
+}
+footer ul{
+    justify-content: center !important;
+}
+footer>hr{
+    margin-top: 1rem;
+}
