@@ -13,7 +13,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME:  leertaken
+  IMAGE_NAME:  tiesgreve/leertaken
 
 jobs:
   build-and-push-leertaken:
@@ -37,7 +37,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push leertaken image
-        run: docker build --push --tag ghcr.io/${{github.actor}}/${{ env.IMAGE_NAME }}:${{ inputs.tag }} -f ./quartz/Dockerfile .
+        run: docker build --push --tag ghcr.io/${{ env.IMAGE_NAME }}:${{ inputs.tag }} -f ./quartz/Dockerfile .
 
       - name: Cleanup docker images
         run: docker image prune -f -a
