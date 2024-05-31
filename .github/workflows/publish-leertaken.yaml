@@ -2,7 +2,7 @@ name: Publish Leertaken
 
 on:
   release:
-    types: [prereleased, released]
+    types: [created]
 
   workflow_dispatch:
     inputs:
@@ -34,7 +34,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push leertaken image
-        run: docker build --push --tag ghcr.io/${{ env.IMAGE_NAME }}:${{ inputs.tag }} --tag ghcr.io/${{ env.IMAGE_NAME }}:latest quartz/.
+        run: docker build --push --tag ghcr.io/${{ env.IMAGE_NAME }}:${{ github.event.release.tag_name }} --tag ghcr.io/${{ env.IMAGE_NAME }}:latest quartz/.
 
       - name: Cleanup docker images
         run: docker image prune -f -a
