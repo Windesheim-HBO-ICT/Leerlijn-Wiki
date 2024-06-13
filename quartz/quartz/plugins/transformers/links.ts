@@ -23,6 +23,9 @@ interface Options {
   openLinksInNewTab: boolean
   lazyLoad: boolean
   externalLinkIcon: boolean
+
+  /** Open all external links in a new tab, default == true */
+  openExternalLinksInNewTab: boolean
 }
 
 const defaultOptions: Options = {
@@ -31,6 +34,7 @@ const defaultOptions: Options = {
   openLinksInNewTab: false,
   lazyLoad: false,
   externalLinkIcon: true,
+  openExternalLinksInNewTab: true,
 }
 
 export const CrawlLinks: QuartzTransformerPlugin<Partial<Options> | undefined> = (userOpts) => {
@@ -93,7 +97,7 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options> | undefined> =
                 }
                 node.properties.className = classes
 
-                if (opts.openLinksInNewTab) {
+                if (opts.openLinksInNewTab || (isExternal && opts.openExternalLinksInNewTab)) {
                   node.properties.target = "_blank"
                 }
 
