@@ -36,7 +36,7 @@ html[saved-theme="light"] {
 }
 
 .sidebar{
-    padding: 1em;
+    padding: 1em 1em 1em 0.5em;
 }
 
 // make the search bar wider
@@ -60,6 +60,9 @@ html[saved-theme="light"] {
 }
 #explorer-content > .overflow{
     background: 0 0 !important;
+}
+#explorer-content ul li>a{
+    margin-left: 0.5rem;
 }
 ul.overflow{
     max-height: 70vh;
