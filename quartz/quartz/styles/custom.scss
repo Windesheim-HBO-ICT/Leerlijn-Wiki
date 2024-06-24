@@ -13,6 +13,19 @@
     justify-content: center;
 }
 
+h2 {
+    margin-bottom: 0;
+    font-size: 1.6rem;
+}
+
+hr {
+    margin-block-start: 0.25em;
+}
+
+blockquote {
+    border-left: 3px solid var(--tertiary);
+}
+
 // if the theme is dark, use the dark logo
 html[saved-theme="dark"] {
     #site-logo {
@@ -36,7 +49,7 @@ html[saved-theme="light"] {
 }
 
 .sidebar{
-    padding: 1em;
+    padding: 1em 1em 1em 0.5em;
 }
 
 // make the search bar wider
@@ -60,6 +73,9 @@ html[saved-theme="light"] {
 }
 #explorer-content > .overflow{
     background: 0 0 !important;
+}
+#explorer-content ul li>a{
+    margin-left: 0.5rem;
 }
 ul.overflow{
     max-height: 70vh;
@@ -198,6 +214,8 @@ footer{
 footer ul{
     justify-content: center !important;
 }
-footer>hr{
+footer > hr{
     margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-block-start: 0.5em;
 }
