@@ -1,5 +1,17 @@
 # Leertaken
 
+## Docker image
+De latest release is beschikbaar als docker image met het volgende command:
+
+```SH
+docker run -p 80:80 --rm -d ghcr.io/windesheim-hbo-ict/leertaken
+```
+
+Waarna de leertaken wiki beschikbaar is op <http://localhost/>.
+
+## Handmatig clonen
+Het is ook mogelijk om handmatig te clonen en een docker image te builden door de volgende stappen uit te voeren:
+
 Ga in de Quartz folder met:
 
 ```SH
