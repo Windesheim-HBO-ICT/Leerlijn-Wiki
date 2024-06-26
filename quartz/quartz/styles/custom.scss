@@ -26,6 +26,10 @@ blockquote {
     border-left: 3px solid var(--tertiary);
 }
 
+p > img {
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+}
+
 // if the theme is dark, use the dark logo
 html[saved-theme="dark"] {
     #site-logo {
