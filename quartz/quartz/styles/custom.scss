@@ -39,6 +39,10 @@ pre>code {
     overflow-x: auto;
 }
 
+a.internal {
+    padding: 0.2rem;
+}
+
 // if the theme is dark, use the dark logo
 html[saved-theme="dark"] {
     #site-logo {
