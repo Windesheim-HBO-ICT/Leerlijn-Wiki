@@ -9,6 +9,11 @@ docker run -p 80:80 --rm -d ghcr.io/windesheim-hbo-ict/leertaken
 
 Waarna de leertaken wiki beschikbaar is op <http://localhost/>.
 
+### Docker deployment bijwerken
+Om een nieuwe versie te publishen moet binnen GitHub een nieuwe release worden gemaakt.
+Dit kan onder .../releases -> Draft a new release.
+De GitHub action maakt vervolgens zelf een nieuwe image en publisht deze
+
 ## Handmatig clonen
 Het is ook mogelijk om handmatig te clonen en een docker image te builden door de volgende stappen uit te voeren:
 
