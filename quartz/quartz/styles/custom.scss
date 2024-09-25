@@ -236,3 +236,15 @@ footer > hr{
     margin-bottom: 2rem;
     margin-block-start: 0.5em;
 }
+.desktop-only{
+    display: block;
+}
+
+.difficulty-indicator {
+    display: inline-block;
+}
+
+.content-meta {
+    display: inline-block;
+    margin-right: 1rem;
+}
