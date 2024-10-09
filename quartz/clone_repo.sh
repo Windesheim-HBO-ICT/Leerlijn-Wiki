@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-REPO_URL="https://github.com/Windesheim-HBO-ICT/Leerlijn-SE"
+REPO_URL="https://github.com/Windesheim-HBO-ICT/Leerlijn-Content-SE"
 BRANCH_NAME="main"
 BRANCH_CONTENT_FOLDER="build"
 SOURCE_FOLDER="/docs/"
