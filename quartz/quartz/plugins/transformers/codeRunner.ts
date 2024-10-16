@@ -16,6 +16,8 @@ export const CodeRunner: QuartzTransformerPlugin = () => {
 
               let props = [];
 
+              if (language == "mermaid" || language == "md") return;
+
               props.push(`language="${language}"`)
 
               if (isSandbox)
