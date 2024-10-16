@@ -9,3 +9,6 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    target-branch: "staging"
+    labels:
+          - "pip dependencies"
