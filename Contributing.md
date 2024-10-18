@@ -21,7 +21,7 @@ export {
 }
 ```
 
-dit zorgt ervoor dat de component toe te voegen is aan pagina in `quartz.layout.ts`. De volgorde van de components is WEL relevant omdat dit de zelfde volgorde is als waarin deze op de pagina worden gezet.
+Dit zorgt ervoor dat de component toe te voegen is aan pagina in `quartz.layout.ts`. De volgorde van de components is WEL relevant omdat dit de zelfde volgorde is als waarin deze op de pagina worden gezet.
 
 ```ts
 export const defaultContentPageLayout: PageLayout = {
@@ -52,7 +52,7 @@ De Difficulty heeft een aantal options die binnen quartz aangepast kunnen worden
 #### functie
 Binnen de functie zelf wordt er eerst gekeken of de difficulty tag aanwezig is en een numerieke waarde heeft. Als dit niet zo is verschijnt de difficulty niet op de pagina.
 
-vervolgens wordt de difficulty tussen 1 en de maximale waarde gezet en de bijbehorende kleur uitgekozen, als er geen kleur is (bijvoorbeeld wanneer de array met kleuren te kort is) wordt de kleur op zwart gezet.
+Vervolgens wordt de difficulty tussen 1 en de maximale waarde gezet en de bijbehorende kleur uitgekozen, als er geen kleur is (bijvoorbeeld wanneer de array met kleuren te kort is) wordt de kleur op zwart gezet.
 
 ```ts
 const difficulty = Math.min(Math.max(props.fileData.frontmatter?.difficulty,1),opts.maxDifficulty)
@@ -98,7 +98,7 @@ Het difficulty component is geïsoleerd en heeft waarschijnlijk weinig onderhoud
 
 De css-class is aan te passen binnen `quartz\styles\custom.css`.
 
-enige mogelijke verbeteringen zouden wel mogelijk zijn. Bijvoorbeeld screen reader support of meer instellingen zoals een default color, screen reader support en tooltips voor het element.
+Enige mogelijke verbeteringen zouden wel mogelijk zijn. Bijvoorbeeld screen reader support of meer instellingen zoals een default color, screen reader support en tooltips voor het element.
 ### Frontmatter
 
 Het is mogelijk nodig om later een aparte plugin te schrijven die waardes toevoegt aan de frontmatter datamap. Dit kan nodig zijn als de waarde gecontroleerd of bewerkt moet worden voor het toevoegen aan de datamap aangezien dit merge conflicten op kan leveren wanneer quartz zelf deze plugin updatet.
@@ -109,7 +109,7 @@ Het is mogelijk nodig om later een aparte plugin te schrijven die waardes toevoe
 
 ## Werking
 
-De codeblokken worden aan de pagina toegevoegd door middel van een Quartz-plugin die Markdown codeblokken omzet naar html-components, dit component maakt gebruik van de Monaco editor en een websocket om met een lokaal draaiende api op een docker container te communiceren die de code uitvoert.
+De codeblokken worden aan de pagina toegevoegd door middel van een Quartz-plugin die Markdown codeblokken omzet naar html-components. deze components component maken gebruik van de Monaco editor en een websocket om met een lokaal draaiende api op een docker container te communiceren die de code uitvoert.
 ### Quartz plugin
 
 De plugin staat in `quartz\plugins\transformers\codeRunner.ts`. 
@@ -135,7 +135,7 @@ De plugin is verantwoordelijk voor deze vertaling van obsidian codeblok-type naa
 
 De visit functie is onderdeel van een package van [unist visit](https://www.npmjs.com/package/unist-util-visit), met behulp van deze functie wordt voor elk codeblok gekeken of er een taal aanwezig is. Als er een taal aanwezig is wordt deze samen met het type (sandbox runner of geen) in een html element gezet. Het type van de node wordt ook op html gezet.
 
-hieronder een versimpelt voorbeeld:
+Hieronder een versimpelt voorbeeld:
 ```js
 props.push(`language="${node.lang}"`)
 props.push('sandbox')
