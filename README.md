@@ -54,4 +54,4 @@ Om de coderunner te laten werken moet ook het volgende commando uitgevoerd worde
 docker run -v /var/run/docker.sock:/var/run/docker.sock -p 8080:8080 --rm -d ghcr.io/windesheim-hbo-ict/coderunner
 ```
 
-Voor meer informatie zie: <https://github.com/Windesheim-HBO-ICT/Deeltaken/wiki/Getting-Started>
+Voor meer informatie zie: <https://github.com/Windesheim-HBO-ICT/Coderunner/wiki/Getting-Started>
