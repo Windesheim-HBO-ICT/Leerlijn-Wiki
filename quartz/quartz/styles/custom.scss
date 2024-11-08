@@ -15,11 +15,14 @@
 
 h2 {
     margin-bottom: 0;
+    margin-top: 0;
     font-size: 1.6rem;
 }
 
 h3 {
     font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 hr {
@@ -236,15 +239,29 @@ footer > hr{
     margin-bottom: 2rem;
     margin-block-start: 0.5em;
 }
+
+// fix desktop-only display mode
 .desktop-only{
     display: block;
+    @media all and (max-width: $fullPageWidth) {
+        display: none;
+    }
 }
 
+// page info
 .difficulty-indicator {
     display: inline-block;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
 }
 
 .content-meta {
     display: inline-block;
     margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tags {
+    margin-bottom: 2rem;
+    margin-top: -0.75rem;
 }
