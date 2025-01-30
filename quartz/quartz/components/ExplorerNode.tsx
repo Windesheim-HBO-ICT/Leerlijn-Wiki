@@ -52,6 +52,7 @@ export class FileNode {
     this.children = []
     this.name = slugSegment
     this.displayName = displayName ?? file?.frontmatter?.title ?? slugSegment
+    this.displayName = this.displayName.replace(/^\d+\.\s*/, '')
     this.file = file ? clone(file) : null
     this.depth = depth ?? 0
   }

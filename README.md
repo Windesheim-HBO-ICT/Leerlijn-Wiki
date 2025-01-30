@@ -55,3 +55,16 @@ docker run -v /var/run/docker.sock:/var/run/docker.sock -p 8080:8080 --rm -d ghc
 ```
 
 Voor meer informatie zie: <https://github.com/Windesheim-HBO-ICT/Coderunner/wiki/Getting-Started>
+
+### CodeBlock.js
+In het bestand `quartz/quartz/plugins/index.tsx` wordt `codeBlock.js` ingeladen.
+Als je, voor ontwikkeling doeleinden `codeBlock.js` lokaal moet hebben moet je het bestand in de map `quartz/public` zetten.
+In `quartz/quartz/plugins/index.tsx` moet het dan dit worden:
+```
+staticResources.js.push({
+    loadTime: "afterDOMReady",
+    contentType: "external",
+    src: "/codeBlock.js",
+    moduleType: "module",
+})
+```
