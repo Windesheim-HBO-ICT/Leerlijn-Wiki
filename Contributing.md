@@ -176,3 +176,56 @@ window.customElements.define("code-block", CodeBlock);
 De plugin moet aangepast worden als de naam of props van de coderunner worden gewijzigd. Deze kunnen worden aangepast binnen de functie die aan 'visit' mee wordt gegeven.
 
 Het webcomponent is de verantwoordelijkheid van de coderunner en wordt hier dus niet besproken
+
+---
+# Explorer
+
+De explorer van quartz is aangepast om de nummers van de folders en bestanden weg te halen. 
+
+## Werking
+
+De displaynames van nodes worden aangepast om het nummer weg te halen en het sorteren is aangepast om de originele naam te gebruiken.
+
+### displayName
+
+Binnen de constructor van `quartz\components\ExplorerNode.tsx` is een extra regel toegevoegd om het nummer, punt en eventuele spaties weg te halen door middel van een replace met regex:
+
+```ts
+  constructor(slugSegment: string, displayName?: string, file?: QuartzPluginData, depth?: number) {
+    this.children = []
+    this.name = slugSegment
+    this.displayName = displayName ?? file?.frontmatter?.title ?? slugSegment
+    this.displayName = this.displayName.replace(/^\d+\.\s*/, '')
+    this.file = file ? clone(file) : null
+    this.depth = depth ?? 0
+  }
+```
+
+### Sorting
+
+De defaultoption voor het sorten is aangepast en gebruikt nu de `name` property in plaats van `displayName`. Dit betekend dat bestanden nog steeds correct gesorteerd worden nadat het nummer verwijderd is.
+Deze instellingen zijn te vinden in `quartz\components\Explorer.tsx`
+```ts
+  sortFn: (a, b) => {
+    // Sort order: folders first, then files. Sort folders and files alphabetically
+    if ((!a.file && !b.file) || (a.file && b.file)) {
+      // numeric: true: Whether numeric collation should be used, such that "1" < "2" < "10"
+      // sensitivity: "base": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A
+      return a.name.localeCompare(b.name, undefined, {
+        numeric: true,
+        sensitivity: "base",
+      })
+    }
+
+    if (a.file && !b.file) {
+      return 1
+    } else {
+      return -1
+    }
+  },
+```
+
+## Onderhouden
+
+Deze aanpassingen zijn erg klein waardoor de kans op merge conflicten bij updates van quartz klein is. 
+Als de bestandsnamen in de toekomst globaal aangepast moeten worden en niet alleen binnen de explorer kunnen deze veranderingen teruggezet worden. Vervolgens kunnen de bestandsnamen mogelijk met een emitter plugin aangepast worden en kan er gezocht worden voor een andere manier om te sorteren.
