@@ -81,7 +81,7 @@ export default ((userOpts?: Partial<Options>) => {
     displayClass,
     fileData,
   }: QuartzComponentProps) => {
-    constructFileTree(allFiles)
+    constructFileTree(allFiles);
     return (
       <div class={classNames(displayClass, "explorer")}>
         <div id="custom-navigation">
@@ -97,7 +97,7 @@ export default ((userOpts?: Partial<Options>) => {
           data-savestate={opts.useSavedState}
           data-tree={jsonTree}
         >
-        <div id="explorer-toggle">
+        {/* <div id="explorer-toggle"> // Button that toggles the explorer.
           <h1>{opts.title ?? i18n(cfg.locale).components.explorer.title}</h1>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -113,8 +113,9 @@ export default ((userOpts?: Partial<Options>) => {
           >
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
-        </div>
+        </div> */}
         </button>
+
         <div id="explorer-content">
           <ul class="overflow" id="explorer-ul">
             <ExplorerNode node={fileTree} opts={opts} fileData={fileData} />
