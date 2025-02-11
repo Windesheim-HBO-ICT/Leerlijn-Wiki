@@ -41,6 +41,7 @@ export const NotFoundPage: QuartzEmitterPlugin = () => {
     async emit(ctx, _content, resources): Promise<FilePath[]> {
       const cfg = ctx.cfg.configuration
       const slug = "404" as FullSlug
+      const allFiles = _content.map((c) => c[1].data)
 
       const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`)
       const path = url.pathname as FullSlug
@@ -52,6 +53,7 @@ export const NotFoundPage: QuartzEmitterPlugin = () => {
         description: notFound,
         frontmatter: { title: notFound, tags: [] },
       })
+      
       const componentData: QuartzComponentProps = {
         ctx,
         fileData: vfile.data,
@@ -59,7 +61,7 @@ export const NotFoundPage: QuartzEmitterPlugin = () => {
         cfg,
         children: [],
         tree,
-        allFiles: [],
+        allFiles,
       }
 
       return [

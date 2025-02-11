@@ -163,6 +163,9 @@ export function pathToRoot(slug: FullSlug): RelativeURL {
 
 export function resolveRelative(current: FullSlug, target: FullSlug | SimpleSlug): RelativeURL {
   const res = joinSegments(pathToRoot(current), simplifySlug(target as FullSlug)) as RelativeURL
+  
+  if (current == "404" && res.startsWith("./")) { return res.slice(1) as RelativeURL } //remove the . when originating from a 404 page since it is rendered as if coming from the root but can be a subfolder.
+
   return res
 }
 
