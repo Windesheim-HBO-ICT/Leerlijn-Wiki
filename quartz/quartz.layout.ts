@@ -7,7 +7,7 @@ export const sharedPageComponents: SharedLayout = {
   header: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/Windesheim-HBO-ICT/Leerlijn-SE",
+      GitHub: "https://github.com/Windesheim-HBO-ICT/Leerlijn-Content-SE",
       "Windesheim": "https://www.windesheim.nl/",
       "Brightspace": "https://leren.windesheim.nl/",
       "WIP": "https://liveadminwindesheim.sharepoint.com/sites/std-HBO-ICT-voltijd/SitePages/Home.aspx",
