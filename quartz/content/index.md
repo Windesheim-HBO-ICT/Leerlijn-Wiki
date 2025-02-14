@@ -1,9 +1,11 @@
 ---
-title: Welcome to Windesheim leertaken
+title: Welkom op Windesheim Leerlijn SE!
+taxonomie: []
 tags:
-  - Welcome/test
-  - page
-difficulty: 2
+
+ignore: true 
 ---
 
 Welkom!
+
+De workshops van security zijn te vinden in de map security
