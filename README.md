@@ -46,6 +46,38 @@ npx quartz build --serve
 
 De website start dan op <http://localhost/>
 
+## Clone & run vanaf CLI
+
+Het is mogelijk om vanaf de CLI een image automatisch te bouwen en runnen en vervolgens een container te (her)starten.
+
+Definieer in `quartz/define_docker_config.sh` de url, branchnaam,
+content folder, imagenaam en containernaam. De default waarden zijn:
+
+```
+REPO_URL="https://github.com/Windesheim-HBO-ICT/Leerlijn-Content-SE"
+
+BRANCH_NAME="main"
+BRANCH_CONTENT_FOLDER="build"
+
+IMAGE_NAME=windesheim-leertaken-quartz
+CONTAINER_NAME=mijn_leertaken
+```
+
+Je zou bijvoorbeeld `BRANCH_NAME` kunnen veranderen in "content" en `BRANCH_CONTENT_FOLDER` in "feature/my-feature".
+
+
+Ga in de Quartz folder met:
+
+```SH
+cd ./quartz
+```
+
+Run:
+
+```SH
+. reset_docker_leertaken.sh
+```
+
 ## Coderunner
 
 Om de coderunner te laten werken moet ook het volgende commando uitgevoerd worden:
