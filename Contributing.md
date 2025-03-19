@@ -205,10 +205,12 @@ Binnen de constructor van `quartz\components\ExplorerNode.tsx` is een extra rege
 
 De defaultoption voor het sorten is aangepast en gebruikt nu de `name` property in plaats van `displayName`. Dit betekend dat bestanden nog steeds correct gesorteerd worden nadat het nummer verwijderd is.
 Deze instellingen zijn te vinden in `quartz\components\Explorer.tsx`
+Ook heeft het sorting een variabel `separateFolders`, als deze op false staat worden folders en bestanden door elkaar heen gezet. 
 ```ts
   sortFn: (a, b) => {
     // Sort order: folders first, then files. Sort folders and files alphabetically
-    if ((!a.file && !b.file) || (a.file && b.file)) {
+    var SeparateFolders = false; // set to true to return to seperated files+folders.
+    if ((!a.file && !b.file) || (a.file && b.file) || !SeparateFolders) {
       // numeric: true: Whether numeric collation should be used, such that "1" < "2" < "10"
       // sensitivity: "base": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A
       return a.name.localeCompare(b.name, undefined, {
