@@ -1,5 +1,9 @@
 # Leertaken
 
+## Vereisten
+`Node.js` => 18.14
+`npm` => 9.3.1
+
 ## Docker image
 De latest release is beschikbaar als docker image met het volgende command:
 
@@ -36,9 +40,12 @@ docker build -t windesheim-leertaken-quartz .
 docker run -dp 80:80 windesheim-leertaken-quartz
 ```
 
-Of met:
+## Handmatig draaien (buiten Docker)
+Voor eenvoudige aanpassingen of het direct bekijken van de content kan de site ook lokaal worden gedraaid.
 
+Voer hiervoor de onderstaande commando's uit in een terminal.
 ```sh
+cd quartz
 npm i
 npx quartz build --serve
 ```
