@@ -18,7 +18,8 @@ const defaultOptions = {
   },
   sortFn: (a, b) => {
     // Sort order: folders first, then files. Sort folders and files alphabetically
-    if ((!a.file && !b.file) || (a.file && b.file)) {
+    var SeparateFolders = false; // set to true to return to seperated files+folders.
+    if ((!a.file && !b.file) || (a.file && b.file) || !SeparateFolders) {
       // numeric: true: Whether numeric collation should be used, such that "1" < "2" < "10"
       // sensitivity: "base": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A
       return a.name.localeCompare(b.name, undefined, {
