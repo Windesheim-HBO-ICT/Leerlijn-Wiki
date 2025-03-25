@@ -1,9 +1,14 @@
 #!/bin/bash
 
+# Read variables:
+# REPO_URL, BRANCH_NAME, BRANCHE_CONTENT_FOLDER
+if [[ -f define_docker_config.sh ]]; then
+    . define_docker_config.sh
+else
+    echo"Please create \"define_docker_config.sh\" to define variables. See README.md"
+fi
+
 # Variables
-REPO_URL="https://github.com/Windesheim-HBO-ICT/Leerlijn-Content-SE"
-BRANCH_NAME="main"
-BRANCH_CONTENT_FOLDER="build"
 SOURCE_FOLDER="/docs/"
 DESTINATION_FOLDER="/usr/src/app/content/"
 DEFAULT_DOCS_FILES="index.md"
