@@ -39,9 +39,9 @@ copy_files() {
 
 # Function to clone the repository and copy files
 clone_repo() {
-    # Remove the source folder if it exists
+    # Empty the source folder if it exists
     if [ -d "$SOURCE_FOLDER" ]; then
-        rm -rf "$SOURCE_FOLDER"
+        rm -rf "$SOURCE_FOLDER"/* || echo "Some files could not be removed, check permissions."
     fi
 
     # Clone the repository
