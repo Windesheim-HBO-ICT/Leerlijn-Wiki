@@ -17,6 +17,7 @@ RUN mkdir -p /home/node/.npm && chown -R 1000:1000 /home/node/.npm
 USER 1000
 
 RUN chmod +x /usr/src/app/start.sh
+RUN chmod +x /usr/src/app/clone_repo.sh
 CMD ["bash", "/usr/src/app/start.sh"]
 
 
