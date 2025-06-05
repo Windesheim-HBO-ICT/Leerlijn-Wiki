@@ -11,5 +11,7 @@ COPY . .
 RUN apt-get update && apt-get install -y \
     git
 RUN mkdir -p /doc && chown -R 1000:1000 /doc
+RUN mkdir -p /home/node/.npm && chown -R 1000:1000 /home/node/.npm
+
 RUN chmod +x /usr/src/app/start.sh
 CMD ["bash", "/usr/src/app/start.sh"]
