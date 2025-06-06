@@ -4,7 +4,7 @@
 REPO_URL="https://github.com/Windesheim-HBO-ICT/Leerlijn-Content-SE"
 BRANCH_NAME="main"
 BRANCH_CONTENT_FOLDER="build"
-SOURCE_FOLDER="/tmp/content"
+SOURCE_FOLDER="/tmp/content/"
 DESTINATION_FOLDER="/usr/src/app/content/"
 DEFAULT_DOCS_FILES="index.md"
 
