@@ -6,4 +6,4 @@ echo "Started cloning the repository.."
 bash clone_repo.sh
 
 ## Run the Quartz build
-npx quartz build --serve
+npx quartz build --serve --port 8080
