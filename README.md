@@ -1,5 +1,13 @@
 # Leertaken
 
+## Maken van een nieuwe release
+1. Ga naar `Releases`
+2. Klik op `Draft new release`
+3. Maak een tag
+4. Klik op `Generate release notes` of schrijf zelf nieuwe release notes
+5. Klik op `Publish release`
+6. Wacht tot de automatische GitHub [action]([action](https://github.com/Windesheim-HBO-ICT/Leerlijn-Wiki/actions)) klaar is en de nieuwe Docker Image is gepusht naar de container registry
+
 ## Vereisten
 `Node.js` => 18.14
 `npm` => 9.3.1
@@ -22,19 +30,16 @@ De GitHub action maakt vervolgens zelf een nieuwe image en publisht deze
 Het is ook mogelijk om handmatig te clonen en een docker image te builden door de volgende stappen uit te voeren:
 
 Ga in de Quartz folder met:
-
 ```SH
 cd .\quartz\
 ```
 
 En start met:
-
 ```SH
 docker run --rm -itp 80:80 $(docker build -q .)
 ```
 
 Of met:
-
 ```SH
 docker build -t windesheim-leertaken-quartz .
 docker run -dp 80:80 windesheim-leertaken-quartz
@@ -54,7 +59,6 @@ npx quartz build --serve
 De website start dan op <http://localhost/>
 
 ## Coderunner
-
 Om de coderunner te laten werken moet ook het volgende commando uitgevoerd worden:
 
 ```SH
