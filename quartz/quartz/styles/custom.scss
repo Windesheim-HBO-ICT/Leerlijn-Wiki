@@ -227,6 +227,13 @@ ul.overflow{
     }
 }
 
+@media (max-width: 639px) {
+    .page > #quartz-body > .center {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+}
+
 // footer
 footer{
     margin-bottom: 1rem !important;
