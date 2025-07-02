@@ -12,6 +12,7 @@ export const sharedPageComponents: SharedLayout = {
       "Brightspace": "https://leren.windesheim.nl/",
       "WIP": "https://liveadminwindesheim.sharepoint.com/sites/std-HBO-ICT-voltijd/SitePages/Home.aspx",
       "HBO-I": "https://www.hbo-i.nl/publicaties-domeinbeschrijving/",
+      "Credits": "/credits",
     },
   }),
 }
